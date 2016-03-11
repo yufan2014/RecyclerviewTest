@@ -30,6 +30,11 @@
         <RadioButton
             android:id="@+id/tab_fourth"
             style="@style/main__bottom_tab"
+            android:text="发现"
+            android:drawableTop="@drawable/selector_tab_d"/>
+        <RadioButton
+            android:id="@+id/tab_fifth"
+            style="@style/main__bottom_tab"
             android:text="我"
             android:drawableTop="@drawable/selector_tab_d"/>
     </RadioGroup>

@@ -5,7 +5,6 @@ import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,6 +15,7 @@ import com.recyclerviewtest.fragment.AFragment;
 import com.recyclerviewtest.fragment.BFragment;
 import com.recyclerviewtest.fragment.CFragment;
 import com.recyclerviewtest.fragment.DFragment;
+import com.recyclerviewtest.fragment.EFragment;
 import com.recyclerviewtest.view.CustomViewPager;
 import com.recyclerviewtest.view.FixedSpeedScroller;
 
@@ -38,6 +38,8 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
     RadioButton tabThird;
     @Bind(R.id.tab_fourth)
     RadioButton tabFourth;
+    @Bind(R.id.tab_fifth)
+    RadioButton tabFifth;
     private List<Fragment> mFragments = new ArrayList<Fragment>();
 
     @Override
@@ -58,6 +60,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         mFragments.add(new BFragment());
         mFragments.add(new CFragment());
         mFragments.add(new DFragment());
+        mFragments.add(new EFragment());
 
     }
 
@@ -80,13 +83,10 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         contentVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.e("onPageScrolled", "----------" + position);
             }
 
             @Override
             public void onPageSelected(int position) {
-                Log.e("onPageSelected", "----------" + position);
-//                resetTabButton();
                 switch (position) {
                     case 0:
                         tabFirst.setChecked(true);
@@ -100,12 +100,14 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
                     case 3:
                         tabFourth.setChecked(true);
                         break;
+                    case 4:
+                        tabFifth.setChecked(true);
+                        break;
                 }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                Log.e("StateChanged", "----------" + state);
 
             }
         });
@@ -114,7 +116,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         tabSecond.setOnClickListener(this);
         tabThird.setOnClickListener(this);
         tabFourth.setOnClickListener(this);
-
+        tabFifth.setOnClickListener(this);
         tabFirst.setChecked(true);
     }
     /**
@@ -162,16 +164,19 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tab_first:
-                contentVp.setCurrentItem(0);
+                contentVp.setCurrentItem(0,false);
                 break;
             case R.id.tab_second:
-                contentVp.setCurrentItem(1);
+                contentVp.setCurrentItem(1,false);
                 break;
             case R.id.tab_third:
-                contentVp.setCurrentItem(2);
+                contentVp.setCurrentItem(2,false);
                 break;
             case R.id.tab_fourth:
-                contentVp.setCurrentItem(3);
+                contentVp.setCurrentItem(3,false);
+                break;
+            case R.id.tab_fifth:
+                contentVp.setCurrentItem(4,false);
                 break;
         }
     }
