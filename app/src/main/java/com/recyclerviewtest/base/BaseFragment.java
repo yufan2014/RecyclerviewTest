@@ -27,6 +27,13 @@ public abstract class BaseFragment extends Fragment {
         return layout;
     }
 
+    public View findViewById(int id){
+        if(layout != null){
+            return layout.findViewById(id);
+        }
+        return null;
+    }
+
     /**
      * 初始化视图
      */
