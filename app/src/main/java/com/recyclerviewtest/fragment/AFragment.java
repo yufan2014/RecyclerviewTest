@@ -2,11 +2,11 @@ package com.recyclerviewtest.fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
 import com.recyclerviewtest.R;
 import com.recyclerviewtest.adapter.RecyclerViewAdapter;
 import com.recyclerviewtest.base.BaseFragment;
+import com.recyclerviewtest.util.RecycleViewDivider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +22,8 @@ import java.util.List;
 public class AFragment extends BaseFragment {
 
 
-    RecyclerView listA;
+    private RecyclerView listA;
     private List<String> mDatas;
-    private TextView item_txt;
 
     @Override
     protected int setContentViewId() {
@@ -38,14 +37,15 @@ public class AFragment extends BaseFragment {
         listA.setLayoutManager(llManager);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity(),mDatas);
         listA.setAdapter(adapter);
+        listA.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL));
+//        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, R.drawable.divider_mileage));
+//        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, 10, getResources().getColor(R.color.divide_gray_color)));
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
 //        listA.setHasFixedSize(true);
-//        item_txt = (TextView)findViewById(R.id.item_txt);
     }
 
     @Override
     protected void initData() {
-//        item_txt.setText("cnaicjaicjia");
     }
 
     @Override
