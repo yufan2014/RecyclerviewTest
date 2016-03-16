@@ -20,7 +20,6 @@ import com.recyclerviewtest.fragment.AFragment;
 import com.recyclerviewtest.fragment.BFragment;
 import com.recyclerviewtest.fragment.CFragment;
 import com.recyclerviewtest.fragment.DFragment;
-import com.recyclerviewtest.fragment.EFragment;
 import com.recyclerviewtest.view.CustomViewPager;
 import com.recyclerviewtest.view.FixedSpeedScroller;
 
@@ -43,8 +42,6 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
     RadioButton tabThird;
     @Bind(R.id.tab_fourth)
     RadioButton tabFourth;
-    @Bind(R.id.tab_fifth)
-    RadioButton tabFifth;
     private List<Fragment> mFragments = new ArrayList<Fragment>();
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -70,8 +67,6 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         mFragments.add(new BFragment());
         mFragments.add(new CFragment());
         mFragments.add(new DFragment());
-        mFragments.add(new EFragment());
-
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -110,9 +105,6 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
                     case 3:
                         tabFourth.setChecked(true);
                         break;
-                    case 4:
-                        tabFifth.setChecked(true);
-                        break;
                 }
             }
 
@@ -126,7 +118,6 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         tabSecond.setOnClickListener(this);
         tabThird.setOnClickListener(this);
         tabFourth.setOnClickListener(this);
-        tabFifth.setOnClickListener(this);
         tabFirst.setChecked(true);
     }
 
@@ -184,9 +175,6 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
                 break;
             case R.id.tab_fourth:
                 contentVp.setCurrentItem(3, false);
-                break;
-            case R.id.tab_fifth:
-                contentVp.setCurrentItem(4, false);
                 break;
         }
     }

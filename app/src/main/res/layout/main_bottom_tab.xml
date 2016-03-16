@@ -19,21 +19,16 @@
         <RadioButton
             android:id="@+id/tab_second"
             style="@style/main__bottom_tab"
-            android:text="主题"
-            android:drawableTop="@drawable/selector_tab_b"/>
+            android:text="嘿秀"
+            android:drawableTop="@drawable/selector_tab_b"
+            />
         <RadioButton
             android:id="@+id/tab_third"
             style="@style/main__bottom_tab"
-            android:text="嘿秀"
-            android:drawableTop="@drawable/selector_tab_c"
-            />
+            android:text="发现"
+            android:drawableTop="@drawable/selector_tab_c"/>
         <RadioButton
             android:id="@+id/tab_fourth"
-            style="@style/main__bottom_tab"
-            android:text="发现"
-            android:drawableTop="@drawable/selector_tab_d"/>
-        <RadioButton
-            android:id="@+id/tab_fifth"
             style="@style/main__bottom_tab"
             android:text="我"
             android:drawableTop="@drawable/selector_tab_d"/>
