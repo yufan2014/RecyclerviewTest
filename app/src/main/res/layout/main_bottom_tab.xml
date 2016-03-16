@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@color/f7f7f7f">
+
+        <RadioButton
+            android:id="@+id/tab_first"
+            style="@style/main__bottom_tab"
+            android:text="首页"
+            android:drawableTop="@drawable/selector_tab_a"/>
+        <RadioButton
+            android:id="@+id/tab_second"
+            style="@style/main__bottom_tab"
+            android:text="嘿秀"
+            android:drawableTop="@drawable/selector_tab_b"
+            />
+        <RadioButton
+            android:id="@+id/tab_third"
+            style="@style/main__bottom_tab"
+            android:text="发现"
+            android:drawableTop="@drawable/selector_tab_c"/>
+        <RadioButton
+            android:id="@+id/tab_fourth"
+            style="@style/main__bottom_tab"
+            android:text="我"
+            android:drawableTop="@drawable/selector_tab_d"/>
+    </RadioGroup>
+
+</merge>
