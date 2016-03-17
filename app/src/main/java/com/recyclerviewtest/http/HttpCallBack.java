@@ -1,7 +1,5 @@
 package com.recyclerviewtest.http;
 
-import org.apache.http.HttpException;
-
 /**
  * 项目名称：RecyclerviewTest
  * 类描述：
@@ -30,9 +28,8 @@ public interface HttpCallBack {
     /**
      * 失败返回的错误
      * @param exception
-     * @param error
      */
-    void onFailure(HttpException exception, String error, int token);
+    void onFailure(Exception exception, int token);
 
 
 
