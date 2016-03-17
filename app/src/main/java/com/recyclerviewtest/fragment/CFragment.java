@@ -1,14 +1,11 @@
 package com.recyclerviewtest.fragment;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.recyclerviewtest.R;
 import com.recyclerviewtest.adapter.RecyclerViewAdapter;
 import com.recyclerviewtest.base.BaseFragment;
-import com.recyclerviewtest.util.RecycleViewDivider;
-import com.recyclerviewtest.util.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,12 +27,11 @@ public class CFragment extends BaseFragment {
         listC = (RecyclerView)findViewById(R.id.list_c);
         StaggeredGridLayoutManager llManager =  new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         listC.setLayoutManager(llManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity(),mDatas);
-        listC.setAdapter(adapter);
-        listC.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL));
+        listC.setAdapter(new RecyclerViewAdapter(getActivity(), mDatas));
+//        listC.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL));
 
-        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
-        listC.addItemDecoration(decoration);
+//        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
+//        listC.addItemDecoration(decoration);
     }
 
     @Override

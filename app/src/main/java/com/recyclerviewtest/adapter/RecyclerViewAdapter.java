@@ -34,6 +34,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        ViewGroup.LayoutParams layoutParams =  holder.mTextView.getLayoutParams();
+        layoutParams.height = 100 + (position % 5) * 100;
+        holder.mTextView.setLayoutParams(layoutParams);
         holder.mTextView.setText(datas.get(position));
 
     }
