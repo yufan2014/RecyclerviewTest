@@ -1,4 +1,4 @@
-package com.recyclerviewtest.util;
+package com.recyclerviewtest.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

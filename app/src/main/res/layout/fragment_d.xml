@@ -8,17 +8,10 @@
     android:orientation="vertical"
     >
 
-   <!--<android.support.v7.widget.RecyclerView-->
-       <!--android:id="@+id/list"-->
-       <!--android:layout_width="match_parent"-->
-       <!--android:layout_height="match_parent"-->
-       <!--android:divider="#ffff0000"-->
-       <!--android:dividerHeight="10dp"/>-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragmentD"
-        android:gravity="center"
-        android:textColor="@color/color_red"/>
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/list_d"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:divider="#ffff0000"
+       android:dividerHeight="10dp"/>
 </LinearLayout>

@@ -6,7 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import com.recyclerviewtest.R;
 import com.recyclerviewtest.adapter.RecyclerViewAdapter;
 import com.recyclerviewtest.base.BaseFragment;
-import com.recyclerviewtest.util.RecycleViewDivider;
+import com.recyclerviewtest.view.RecycleViewDivider;
+import com.recyclerviewtest.view.recyclerview.HeaderAndFooterRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class AFragment extends BaseFragment {
 
     private RecyclerView listA;
     private List<String> mDatas;
+    private HeaderAndFooterRecyclerViewAdapter mHeaderAndFooterRecyclerViewAdapter;
 
     @Override
     protected int setContentViewId() {
@@ -36,7 +38,8 @@ public class AFragment extends BaseFragment {
         LinearLayoutManager llManager =  new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         listA.setLayoutManager(llManager);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity(),mDatas);
-        listA.setAdapter(adapter);
+        mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(adapter);
+        listA.setAdapter(mHeaderAndFooterRecyclerViewAdapter);
         listA.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL));
 //        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, R.drawable.divider_mileage));
 //        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, 10, getResources().getColor(R.color.divide_gray_color)));
@@ -51,7 +54,7 @@ public class AFragment extends BaseFragment {
     @Override
     protected void initGetData() {
         mDatas = new ArrayList<>();
-        for (int i = 'A'; i < 'z'; i++)
+        for (int i = 'A'; i <= 'Z'; i++)
         {
             mDatas.add("" + (char) i);
         }

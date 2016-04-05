@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.recyclerviewtest.R;
 import com.recyclerviewtest.adapter.RecyclerViewAdapter;
 import com.recyclerviewtest.base.BaseFragment;
-import com.recyclerviewtest.util.RecycleViewDivider;
+import com.recyclerviewtest.view.RecycleViewDivider;
 
 import java.util.ArrayList;
 import java.util.List;
