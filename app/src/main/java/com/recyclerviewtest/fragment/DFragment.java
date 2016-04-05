@@ -29,6 +29,7 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
     private List<String> mDatas;
     private HeaderAndFooterRecyclerViewAdapter mHeaderAndFooterRecyclerViewAdapter;
     private int REQUEST_COUNT = 10;
+    private SwipeRefreshLayout refresh;
 
     @Override
     protected int setContentViewId() {
@@ -64,6 +65,11 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
             }
         });
 
+
+        refresh = (SwipeRefreshLayout)findViewById(R.id.refresh);
+        refresh.setColorSchemeResources(R.color.color_00d446, R.color.color_0dbdbb, R.color.color_0aa4e7);
+        refresh.setProgressViewOffset(true, 10, 120);
+        refresh.setOnRefreshListener(this);
     }
 
     @Override
@@ -80,6 +86,7 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         }
     }
 
+    @Override
     public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
             @Override
