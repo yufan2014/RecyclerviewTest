@@ -11,7 +11,7 @@ import com.recyclerviewtest.R;
 import com.recyclerviewtest.adapter.RecyclerViewAdapter;
 import com.recyclerviewtest.base.BaseFragment;
 import com.recyclerviewtest.view.RecycleViewDivider;
-import com.recyclerviewtest.view.recyclerview.EndlessRecyclerOnScrollListener;
+import com.recyclerviewtest.view.recyclerview.RecyclerOnScrollListener;
 import com.recyclerviewtest.view.recyclerview.HeaderAndFooterRecyclerViewAdapter;
 import com.recyclerviewtest.view.recyclerview.LoadingFooter;
 import com.recyclerviewtest.view.recyclerview.RecyclerViewStateUtils;
@@ -45,7 +45,7 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(adapter);
         listD.setAdapter(mHeaderAndFooterRecyclerViewAdapter);
         listD.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL));
-        listD.addOnScrollListener(new EndlessRecyclerOnScrollListener(){
+        listD.addOnScrollListener(new RecyclerOnScrollListener(){
             @Override
             public void onLoadNextPage(View view) {
                 LoadingFooter.State state = RecyclerViewStateUtils.getFooterViewState(listD);
@@ -80,7 +80,7 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
     @Override
     protected void initGetData() {
         mDatas = new ArrayList<>();
-        for (int i = 'A'; i < 'Z'; i++)
+        for (int i = 'A'; i <= 'Z'; i++)
         {
             mDatas.add("" + (char) i);
         }
@@ -91,7 +91,8 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                RecyclerViewStateUtils.setFooterViewState(listD,LoadingFooter.State.TheEnd);
+                refresh.setRefreshing(false);
             }
         }, 2500);
     }
@@ -99,7 +100,8 @@ public class DFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                refresh.setRefreshing(false);
+                RecyclerViewStateUtils.setFooterViewState(listD,LoadingFooter.State.TheEnd);
             }
         }, 2500);
     }
