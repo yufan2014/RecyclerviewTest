@@ -49,10 +49,6 @@ public class CFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         ExStaggeredGridLayoutManager manager = new ExStaggeredGridLayoutManager (2, StaggeredGridLayoutManager.VERTICAL);
         manager.setSpanSizeLookup(new HeaderSpanSizeLookup((HeaderAndFooterRecyclerViewAdapter) listC.getAdapter(), manager.getSpanCount()));
         listC.setLayoutManager(manager);
-//        listC.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL));
-
-//        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
-//        listC.addItemDecoration(decoration);
 
         listC.addOnScrollListener(new RecyclerOnScrollListener(){
             @Override

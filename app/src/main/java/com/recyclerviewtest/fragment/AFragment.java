@@ -54,8 +54,6 @@ public class AFragment extends BaseFragment implements SwipeRefreshLayout.OnRefr
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity(),mDatas);
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(adapter);
         listA.setAdapter(mHeaderAndFooterRecyclerViewAdapter);
-//        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, R.drawable.divider_mileage));
-//        listA.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL, 10, getResources().getColor(R.color.divide_gray_color)));
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
 //        listA.setHasFixedSize(true);
         listA.addOnScrollListener(new RecyclerOnScrollListener(){
